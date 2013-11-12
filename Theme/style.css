@@ -1,0 +1,161 @@
+/*
+Theme Name: Rene Denfeld Theme
+Theme URI: 
+Author: Aaron Pedersen
+Author URI: http://aaronmadethic.com/
+Description: A custom theme for Rene Denfeld, made by Aaron Made This
+Version: 0.1
+License: GNU General Public License
+License URI: 
+Tags: 
+*/
+
+/*
+font-family: "museo-sans",sans-serif;
+font-style: normal;
+font-weight: 300;
+
+font-family: "museo-sans",sans-serif;
+font-style: italic;
+font-weight: 300;
+
+font-family: "utopia-std",sans-serif;
+font-style: normal;
+font-weight: 400;
+
+font-family: "utopia-std",sans-serif;
+font-style: italic;
+font-weight: 400;
+*/
+
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	position: relative;
+	font-size: 16px;
+	font-family: arial, sans-serif;
+	width: 100%;
+	min-height: 100%;
+	-webkit-font-smoothing: antialiased;
+	color: #fff;
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+p{
+	padding: 0;
+	margin: 0;
+}
+a,
+a:link,
+a:visited{
+	color: #fff;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+.hide{
+	visibility: hidden;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.invisible{
+	display: none;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.clear{
+	clear:both;
+}
+.float-left{
+	float:left;
+}
+.preloader {
+	background:url('images/loading.gif') center center no-repeat;
+	background-size: 34px 43px;
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+.preloader_png {
+	position: absolute;
+    background:url('images/loader_icon.png') center center no-repeat;
+    background-size: 10px 10px;
+    height: 10px;
+	width: 10px;
+	top:5px;
+	left:5px;
+	/*background-image::url('images/loading.gif');*/
+	-moz-animation: spin .5s infinite linear;
+	-webkit-animation: spin .5s infinite linear
+}
+@-moz-keyframes spin {
+    0% { -moz-transform: rotate(0deg); }
+    100% { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+	0% { -webkit-transform:rotate(0deg); }
+	100% { -webkit-transform:rotate(360deg); }
+}
+
+/* =================================
+CLEARFIX
+===================================*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix {
+	display: inline-block;
+}
+html[xmlns] .clearfix {
+	display: block;
+}
+* html .clearfix {
+	height: 1%;
+}
+
+
+/* =================================
+HOME CANVAS
+===================================*/
+#canvas-fallback{
+	width: 50%;
+	height: 50%;
+}
+
+
+/* =================================
+FULL SCREEN BACKGROUND
+===================================*/
+#background-wrapper{
+	position: fixed;
+	width:100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: -1;
+	}
+	#background-wrapper img.horz{
+		width: 100%;
+		}
+	#background-wrapper img.vert{
+		height: 100%;
+		}
+
+
+
+
+
+
