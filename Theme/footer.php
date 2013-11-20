@@ -1,8 +1,8 @@
 <div class="clear"></div>
-<div id="footer-wrapper">
+<section id="footer-wrapper">
 	<footer>
 	</footer>
-</div>
+</section>
 <?php 
 	$bg_img_id = get_field('background_image', 'options');
 	$bg_img = wp_get_attachment_image_src( $bg_img_id, $size = 'background-full', $icon = false, $attr = '' );
