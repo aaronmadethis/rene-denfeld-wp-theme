@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
 	var win_w = $(window).width(),
 		win_h = $(window).height(),
 		container_w = $("#grid-wrapper").width(),
-		columns = 10,
+		columns = 12,
 		device_o = 'desktop';
 	
 	/* ---------------------------------------------------------------------------------------
@@ -10,7 +10,10 @@ jQuery(document).ready(function($) {
 	--------------------------------------------------------------------------------------- */
 	function doOnOrientationChange(){
 		switch(window.orientation){  
-			case -90:
+			case Number(-90):
+				$('body').addClass('landscape').removeClass('portrait');
+				device_o = 'landscape';
+				break; 
 			case 90:
 				$('body').addClass('landscape').removeClass('portrait');
 				device_o = 'landscape';
@@ -29,43 +32,45 @@ jQuery(document).ready(function($) {
 
 	function viewport_test(){
 		if( win_w > 1300)
-			columns = 10;
+			columns = 9;
 
 		if( 1024 <= win_w && win_w < 1300 )
-			columns = 8;
+			columns = 9;
 		
 		if( 768 <= win_w && win_w < 1024 )
-			columns = device_o !== 'portrait' ? 6 : 4;
+			columns = device_o !== 'portrait' ? 9 : 6;
 
 		if( 480 <= win_w && win_w < 768 )
-			columns = 4;
+			columns = 6;
 
 		if( 320 < win_w && win_w < 480 )
 			columns = 2;
 
 		if( 320 >= win_w )
 			columns = device_o !== 'portrait' ? 2 : 1;
-
-		set_grid();
+		
+		if( $('#grid-wrapper').length > 0 ){
+			set_grid();
+		}
 	}
 
 	function set_grid(){
 		container_w = $("#grid-wrapper").width();
 
 
-		var col_w = Math.floor( container_w / columns );
+		var col_w = Math.floor( container_w / columns ),
 			//grid_w = col_w * columns,
-			gutter = $('.inside').css('margin-left');
-			gutter = gutter.slice(0, -2);
-			gutter = Number( gutter * 2 );
+			grid_gutter = $('.inside').css('margin-left');
+			grid_gutter = grid_gutter.slice(0, -2);
+			grid_gutter = Number( grid_gutter * 2 );
 
 		$('#grid-wrapper').css({"margin-top": 60 });
-		$('.grid').css({width: '', 'margin-bottom': gutter});
+		$('.grid').css({width: '', 'margin-bottom': grid_gutter});
 		for (var i = 1; i < columns; i++) {
 			$('.grid_' + i).css({'width': (col_w * i) });
 		};
 
-		$('#test').html('columns: ' + columns + ' / window width: ' + win_w  + ' / device: ' + device_o  + ' / gutter: ' + gutter);
+		$('#test').html('columns: ' + columns + ' / window width: ' + win_w  + ' / device: ' + device_o  + ' / gutter: ' + grid_gutter);
 		set_masonry();
 	}
 	viewport_test();
@@ -75,7 +80,39 @@ jQuery(document).ready(function($) {
 	--------------------------------------------------------------------------------------- */
 	function set_background(){
 		$('#background-wrapper').css({width: win_w, height: win_h});
+		var win_r = win_w / win_h,
+			img_w = $('#background-wrapper img').attr('data-width'),
+			img_h = $('#background-wrapper img').attr('data-height'),
+			img_r = img_w / img_h;
+
+		if(win_r > img_r){
+			//window is wide
+			$('#background-wrapper img').removeClass('vert').addClass('horz');
+		}else{
+			//window is high
+			$('#background-wrapper img').removeClass('horz').addClass('vert');
+		}
 	}
+	if( $('html.backgroundsize').length > 0 ){
+		$('#background-wrapper img').remove();
+	}else{
+		set_background();
+	}
+	
+
+	/* ---------------------------------------------------------------------------------------
+	EVEN BOXES
+	--------------------------------------------------------------------------------------- */
+	function set_even_boxes(){
+		if( $('#biography-page-wrapper').length > 0 && win_w > 480 ){
+			$('#biography-page-wrapper .inside').attr('style', '');
+			var parent_h = $('#biography-page-wrapper').height();
+			$('#biography-page-wrapper .inside').css({height: parent_h-44});
+			//console.log('height', parent_h);
+		}
+	}
+	set_even_boxes();
+
 
 	/* ---------------------------------------------------------------------------------------
 	PROJECT MASONRY
@@ -117,7 +154,11 @@ jQuery(document).ready(function($) {
 	    } else {
 	        timeout = false;
 	        win_w = $(window).width();
+	        if( $('html.backgroundsize').length === 0 ){
+	        	set_background();
+	    	}
 			viewport_test();
+			set_even_boxes();
 	    }               
 	}
 

@@ -59,7 +59,8 @@ a:visited{
 	text-decoration: none;
 }
 a:hover{
-	text-decoration: underline;
+	/*text-decoration: underline;*/
+	color: rgb(214, 164, 93);
 }
 
 .hide{
@@ -142,8 +143,8 @@ PAGE SETUP
 /* =================================
 MAIN NAV
 ===================================*/
-#header-wrapper{
-
+#header-wrapper #nav-wrapper nav{
+	margin-top: 36px;
 	}
 	#header-wrapper #nav-wrapper nav ul,
 	#header-wrapper #nav-wrapper nav{
@@ -151,39 +152,52 @@ MAIN NAV
 		text-align: center;
 		}
 		#header-wrapper #nav-wrapper nav ul{
+			margin-top: 8px;
+			letter-spacing: 0.1em;
 			float:left;
 			}
 			#header-wrapper #nav-wrapper nav ul li{
 				font-size: 0.750em;
 				text-transform: uppercase;
 				display: inline;
-				padding: 0 10px 0 10px;
+				padding: 0 14px 0 14px;
 				}
+				#header-wrapper #nav-wrapper nav ul li.current-menu-item a{
+					color: rgb(214, 164, 93);
+					}
 	#header-wrapper #nav-wrapper nav #logo{
+		letter-spacing: 0.3em;
 		font-family: "utopia-std",sans-serif;
 		font-style: normal;
 		font-weight: 400;
-		font-size: 2em;
+		font-size: 1.9em;
 		}
 	#header-wrapper	#buy-now{
 		width: 100%;
 		}
 		#header-wrapper	#buy-now a{
+			font-size: 0.750em;
 			position: relative;
 			left: 50%;
 			top: 0;
-			margin-left: -5em;
+			margin-left: -7em;
 			display: block;
 			text-align: center;
-			width: 10.000em;
-			height: 2.375em;
+			width: 14.000em;
+			height: 3.375em;
 			background: rgb(38, 43, 46); 
 			background: rgba(38, 43, 46, .5);
 			}
 			#header-wrapper	#buy-now a img{
+				padding-left: 11px;
+				padding-right: 8px;
+				padding-top: 4px;
 				display: inline-block;
 				}
-
+			#header-wrapper	#buy-now a span{
+				position: relative;
+				top: -10px;
+				}
 
 /* =================================
 HOME CANVAS
@@ -201,6 +215,157 @@ HOME CANVAS
 
 
 /* =================================
+THE ENCHANTED PAGE
+===================================*/
+#rd_enchanted-page-wrapper li.first img{
+	width: 100%;
+}
+#rd_enchanted-page-wrapper .inside{
+	background: rgb(38, 43, 46); 
+	background: rgba(38, 43, 46, .9);
+	padding: 22px;
+	text-align: center;
+	}
+	#rd_enchanted-page-wrapper .inside .quote{
+		font-size: 0.750em;
+		line-height: 2.5em;
+		}
+		#rd_enchanted-page-wrapper .inside .quote span{
+			position: relative;
+			top:30px;
+			line-height: 0;
+			font-family: Georgia,times,sans-serif;
+			font-weight: 400;
+			font-size: 5em;
+			color: rgb(70, 77, 85);
+			}
+			#rd_enchanted-page-wrapper .inside .quote span:nth-child(odd){
+				right: 2px;
+				}
+			#rd_enchanted-page-wrapper .inside .quote span:nth-child(even){
+				left: 2px;
+				}
+	#rd_enchanted-page-wrapper .inside .rule{
+		height: 1px;
+		border-top: 1px solid #464d55;
+		margin: 17px 0px;
+		}
+	#rd_enchanted-page-wrapper .inside .quote_name,
+	#rd_enchanted-page-wrapper .inside .caption{
+		color: rgb(214, 164, 93);
+		font-family: "utopia-std",sans-serif;
+		font-weight: 400;
+		}
+	#rd_enchanted-page-wrapper .inside .quote_name{
+		font-size: 1em;
+		letter-spacing: 0.07em;
+		font-style: italic;
+	}
+	#rd_enchanted-page-wrapper .inside .caption{
+		padding-top: 3px;
+		letter-spacing: 0.083em;
+		font-size: 0.750em;
+		font-style: normal;
+		}
+
+
+/* =================================
+EVENTS PAGE
+===================================*/
+#rd_events-page-wrapper .inside{
+	background: rgb(38, 43, 46); 
+	background: rgba(38, 43, 46, .9);
+	padding: 22px;
+	text-align: center;
+	}
+
+
+
+/* =================================
+BIOGRAPHY
+===================================*/
+#biography-page-wrapper{
+	margin-top: 60px;
+	width: 100%;
+	}
+	#biography-page-wrapper .grid{
+		margin-bottom: 0px;
+		}
+	#biography-page-wrapper .inside{
+		background: rgb(38, 43, 46); 
+		background: rgba(38, 43, 46, .9);
+		padding: 22px;
+		height: 100%;
+		}
+
+#biography-page-wrapper aside{
+	height: 100%;
+	}
+	#biography-page-wrapper aside .inside img{
+		max-width: 100%;
+		}
+	#biography-page-wrapper aside .inside span{
+		font-size: 0.625em;
+		color: rgb(107, 113, 119); 
+		display: block;
+		}
+#biography-page-wrapper article{
+	height: 100%;
+	text-align: center;
+	}
+	#biography-page-wrapper article .intro{
+		color: rgb(214, 164, 93);
+		font-family: "utopia-std",sans-serif;
+		font-weight: 400;
+		font-size: 1.5em;
+		font-style: italic;
+		line-height: 1.5em;
+		}
+	#biography-page-wrapper article .bio{
+		font-size: 0.750em;
+		line-height: 2.5em;
+		font-style: normal;
+		}
+		#biography-page-wrapper article .bio p{
+			margin: 20px 0 0 0;
+			}
+
+
+/* =================================
+CONTACT
+===================================*/
+#contact-page-wrapper{
+	margin-top: 60px;
+	width: 100%;
+	}
+	#contact-page-wrapper.grid{
+		margin-bottom: 0px;
+		}
+	#contact-page-wrapper .inside{
+		background: rgb(38, 43, 46); 
+		background: rgba(38, 43, 46, .9);
+		padding: 22px;
+		height: 100%;
+		}
+
+#contact-page-wrapper aside{
+	height: 100%;
+	}
+	#contact-page-wrapper aside .inside img{
+		max-width: 100%;
+		}
+	#contact-page-wrapper aside .inside span{
+		font-size: 0.625em;
+		color: rgb(107, 113, 119); 
+		display: block;
+		}
+#contact-page-wrapper section{
+	height: 100%;
+	text-align: center;
+	}
+
+
+/* =================================
 FULL SCREEN BACKGROUND
 ===================================*/
 #background-wrapper{
@@ -211,7 +376,13 @@ FULL SCREEN BACKGROUND
 	left: 0;
 	overflow: hidden;
 	z-index: -1;
+	background-size: cover;
+	background-position:center;
+	background-repeat:no-repeat;
 	}
+	#background-wrapper img{
+
+		}
 	#background-wrapper img.horz{
 		width: 100%;
 		}
@@ -219,8 +390,15 @@ FULL SCREEN BACKGROUND
 		height: 100%;
 		}
 
-
-
+/* =================================
+SCREEN SIZE AT 480 OR SMALLER
+===================================*/
+@media screen and (max-width: 480px){
+	#header-wrapper #nav-wrapper nav ul li{
+		display: block;
+		padding-top: 5px;
+	}
+}
 
 
 

@@ -1,5 +1,7 @@
 <?php
 	/* ----- THE ENCHANTED Template ----- */
+	$theme_dir_path = get_stylesheet_directory_uri();
+
 	$loop = new WP_Query(
 		array(
 			'post_type' => 'rd_enchanted',
@@ -13,9 +15,14 @@
 <section id="rd_enchanted-page-wrapper">
 	<ul id="grid-wrapper" class="float-left">
 		<li class="grid_1 mason-sizer invisible"></li>
+		<li class="grid_3 grid mason_box first" >
+			<article class="inside">
+				<img src="<?php echo $theme_dir_path ?>/images/enchanted-book-cover.jpg" />
+			</article>
+		</li>
 		<?php if ( $loop->have_posts() ) : ?>
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				<li>
+				<li class="grid_3 grid mason_box" >
 					<article class="inside">
 						<?php
 							if(get_field('quote')){

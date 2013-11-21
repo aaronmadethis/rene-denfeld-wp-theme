@@ -2,25 +2,31 @@
 	/* ----- CONTACT Template ----- */
 ?>
 
-<section id="contact-page-wrapper">
+<section id="contact-page-wrapper"  class="clearfix">
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
+			<aside class="float-left grid_3">
+				<div class="inside">
+					<?php
+						$image_id = get_post_thumbnail_id();
+						$page_img = wp_get_attachment_image_src($image_id, 'sidebar-full');
+						$args = array(
+							'post_type' => 'attachment',
+							'numberposts' => -1,
+							'post_status' => null,
+							'post_parent' => $post->ID
+						);
 
-				<?php
-					$image_id = get_post_thumbnail_id();
-					$page_img = wp_get_attachment_image_src($image_id, 'sidebar-full');
-					$args = array(
-						'post_type' => 'attachment',
-						'numberposts' => -1,
-						'post_status' => null,
-						'post_parent' => $post->ID
-					);
+						$attachments = get_posts( $args );
+						echo '<img src="' . $page_img[0] . '" width="' . $page_img[1] . '" height="' . $page_img[2] . '" alt="' . get_the_title() . '" />';
+						echo '<span>' . $attachments[0]->post_excerpt . '</span>';
+					?>
+				</div>
+			</aside>
 
-					$attachments = get_posts( $args );
-					echo '<img src="' . $page_img[0] . '" width="' . $page_img[1] . '" height="' . $page_img[2] . '" alt="' . get_the_title() . '" />';
-					echo '<span>' . $attachments[0]->post_excerpt . '</span>';
-				?>
-				
+			<section class="float-left grid_6">
+				<div class="inside">
+
 				<?php if(get_field('contact_links')): ?>
 					<article>
 						<h1>Rene Denfeld</h1>
@@ -56,6 +62,9 @@
 					<div><?php the_field('publicist_phone'); ?></div>
 					<div><a href="mailto:<?php the_field('publicist_email'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-email.png" width="15" height="15" /></a></div>
 				</article>
+				
+				</div>
+			</section>
 
 		<?php endwhile; ?>
 	<?php endif; /*have_posts*/ ?>
