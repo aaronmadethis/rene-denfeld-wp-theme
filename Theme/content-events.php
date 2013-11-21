@@ -43,7 +43,7 @@
 			<?php endwhile; ?>
 		<?php endif; /*have_posts*/ ?>
 		<li class="grid_3 grid mason_box" >
-			<article class="inside">Please check-in often as we schedule more events in Seattle, San Francisco, and at regional trade shows and libraries.</article>
+			<article class="inside"><div class="date">Please check-in often as we schedule more events in Seattle, San Francisco, and at regional trade shows and libraries.</div></article>
 		</li>
 	</ul>
 </section>

@@ -42,6 +42,7 @@ body{
 	min-height: 100%;
 	-webkit-font-smoothing: antialiased;
 	color: #fff;
+	background-color: #000;
 }
 ul{
 	list-style: none;
@@ -172,10 +173,48 @@ MAIN NAV
 		font-weight: 400;
 		font-size: 1.9em;
 		}
+
+
+	/* =================================
+	BUY NOW DROPDOWN
+	===================================*/	
 	#header-wrapper	#buy-now{
+		position: relative;
 		width: 100%;
 		}
-		#header-wrapper	#buy-now a{
+		#header-wrapper	#buy-now .tray{
+			width: 360px;
+			position: absolute;
+			left: 50%;
+			margin-left: -180px;
+			height: 70px;
+			background: rgb(38, 43, 46); 
+			background: rgba(38, 43, 46, 1.0);
+			z-index: 10;
+			}
+			#header-wrapper	#buy-now .tray span{
+				position: absolute;
+				}
+				#header-wrapper	#buy-now .tray span.buy-amazon{
+					left: 20px;
+					top: 30px;
+					}
+				#header-wrapper	#buy-now .tray span.buy-goodreads{
+					left: 123px;
+					top: 22px;
+					padding: 0 18px;
+					border-left: 1px solid;
+					border-right: 1px solid;
+					}
+					#header-wrapper	#buy-now .tray span.buy-goodreads a{
+						padding-top: 3px;
+						display:block;
+						}
+				#header-wrapper	#buy-now .tray span.buy-powells{
+					right: 22px;
+					top: 17px;
+					}
+		#header-wrapper	#buy-now a.btn{
 			font-size: 0.750em;
 			position: relative;
 			left: 50%;
@@ -188,16 +227,18 @@ MAIN NAV
 			background: rgb(38, 43, 46); 
 			background: rgba(38, 43, 46, .5);
 			}
-			#header-wrapper	#buy-now a img{
+			#header-wrapper	#buy-now a.btn img{
 				padding-left: 11px;
 				padding-right: 8px;
 				padding-top: 4px;
 				display: inline-block;
 				}
-			#header-wrapper	#buy-now a span{
+			#header-wrapper	#buy-now a.btn span{
 				position: relative;
 				top: -10px;
 				}
+
+
 
 /* =================================
 HOME CANVAS
@@ -225,6 +266,9 @@ THE ENCHANTED PAGE
 	background: rgba(38, 43, 46, .9);
 	padding: 22px;
 	text-align: center;
+	}
+	#rd_enchanted-page-wrapper .inside p{
+		display: inline;
 	}
 	#rd_enchanted-page-wrapper .inside .quote{
 		font-size: 0.750em;
@@ -278,8 +322,36 @@ EVENTS PAGE
 	padding: 22px;
 	text-align: center;
 	}
+	#rd_events-page-wrapper article.inside{
 
-
+		}
+		#rd_events-page-wrapper .inside .date{
+			font-family: "utopia-std",sans-serif;
+			font-weight: 400;
+			font-style: normal;
+			font-size: 1.063em;
+			color: rgb(214, 164, 93);
+			}
+		#rd_events-page-wrapper .inside .description{
+			padding-top: 3px;
+			letter-spacing: 0.083em;
+			font-size: 0.750em;
+			font-style: normal;
+			line-height: 1.5em;
+			}
+		#rd_events-page-wrapper .inside .location{
+			font-family: "utopia-std",sans-serif;
+			font-weight: 400;
+			font-style: italic;
+			font-size: 0.938em;
+			color: rgb(214, 164, 93);
+			padding-top: 5px;
+			}
+	#rd_events-page-wrapper .inside .rule{
+		height: 1px;
+		border-top: 1px solid #464d55;
+		margin: 10px 0px;
+		}
 
 /* =================================
 BIOGRAPHY
@@ -304,11 +376,15 @@ BIOGRAPHY
 	#biography-page-wrapper aside .inside img{
 		max-width: 100%;
 		}
-	#biography-page-wrapper aside .inside span{
+	#biography-page-wrapper aside .inside span a:link,
+	#biography-page-wrapper aside .inside span a:visited{
 		font-size: 0.625em;
 		color: rgb(107, 113, 119); 
 		display: block;
 		}
+		#biography-page-wrapper aside .inside span a:hover{
+			text-decoration: underline;
+			}
 #biography-page-wrapper article{
 	height: 100%;
 	text-align: center;
@@ -328,6 +404,9 @@ BIOGRAPHY
 		}
 		#biography-page-wrapper article .bio p{
 			margin: 20px 0 0 0;
+			}
+		#biography-page-wrapper article .bio a{
+			text-decoration: underline;
 			}
 
 
@@ -354,15 +433,50 @@ CONTACT
 	#contact-page-wrapper aside .inside img{
 		max-width: 100%;
 		}
-	#contact-page-wrapper aside .inside span{
+	#contact-page-wrapper aside .inside span a:link,
+	#contact-page-wrapper aside .inside span a:visited{
 		font-size: 0.625em;
 		color: rgb(107, 113, 119); 
 		display: block;
 		}
+		#contact-page-wrapper aside .inside span a:hover{
+			text-decoration: underline;
+			}
 #contact-page-wrapper section{
 	height: 100%;
 	text-align: center;
 	}
+	#contact-page-wrapper article{
+		padding-bottom: 20px;
+		}
+		#contact-page-wrapper article h1{
+			color: rgb(214, 164, 93);
+			font-family: "utopia-std",sans-serif;
+			font-weight: 400;
+			font-size: 1.250em;
+			font-style: italic;
+			margin: 0;
+			}
+		#contact-page-wrapper article div,
+		#contact-page-wrapper article h2{
+			letter-spacing: 0.083em;
+			font-size: 0.750em;
+			line-height: 1.5em;
+			font-style: normal;
+			font-weight: 300;
+			}
+		#contact-page-wrapper article h2{
+			margin: 0;
+		}
+		#contact-page-wrapper article div.icons{
+			padding-top: 10px;
+		}
+		#contact-page-wrapper article div a{
+			padding: 5px;
+		}
+		#contact-page-wrapper article:last-child{
+			padding-bottom: 0px;
+		}
 
 
 /* =================================

@@ -9,7 +9,7 @@
 				<div class="inside">
 					<?php
 						$image_id = get_post_thumbnail_id();
-						$page_img = wp_get_attachment_image_src($image_id, 'full');
+						$page_img = wp_get_attachment_image_src($image_id, 'sidebar-full');
 						$args = array(
 							'post_type' => 'attachment',
 							'numberposts' => -1,
@@ -19,7 +19,7 @@
 
 						$attachments = get_posts( $args );
 						echo '<img src="' . $page_img[0] . '" alt="' . get_the_title() . '" />';
-						echo '<span>' . $attachments[0]->post_excerpt . '</span>';
+						echo '<span><a href=" http://www.garynormanphotography.com" target="_blank">' . $attachments[0]->post_excerpt . '</a></span>';
 					?>
 				</div>
 			</aside>

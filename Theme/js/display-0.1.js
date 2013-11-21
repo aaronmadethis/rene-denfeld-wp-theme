@@ -108,10 +108,35 @@ jQuery(document).ready(function($) {
 			$('#biography-page-wrapper .inside').attr('style', '');
 			var parent_h = $('#biography-page-wrapper').height();
 			$('#biography-page-wrapper .inside').css({height: parent_h-44});
-			//console.log('height', parent_h);
+		}
+		if( $('#contact-page-wrapper').length > 0 && win_w > 480 ){
+			$('#contact-page-wrapper .inside').attr('style', '');
+			var parent_h = $('#contact-page-wrapper').height();
+			$('#contact-page-wrapper .inside').css({height: parent_h-44});
 		}
 	}
 	set_even_boxes();
+
+	var tray_h = $('#buy-now .tray').height();
+
+	function set_buy_now(){
+		//$('#buy-now').css({top: -tray_h, height: 40});
+		$('#buy-now .tray').css({'margin-top': tray_h * -1});
+	}
+	set_buy_now();
+
+	$('#buy-now a.btn').hover(function(e){
+		//$('#buy-now').stop(true, false).animate({top: 0}, {queue: false, duration: 250}).animate({height: 110}, 250 );
+		$('#buy-now .tray').stop(true, false).animate({'margin-top': 0}, 250 );
+		e.stopPropagation();
+		e.preventDefault();
+	});
+
+	$('#buy-now .tray').mouseleave(function(e){
+		$(this).stop(true, false).animate({'margin-top': tray_h * -1}, 250 );
+		e.stopPropagation();
+		e.preventDefault();
+	});
 
 
 	/* ---------------------------------------------------------------------------------------

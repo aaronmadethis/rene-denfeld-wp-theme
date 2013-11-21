@@ -4,7 +4,13 @@
 ?>
 <section id="header-wrapper">
 	<div id="buy-now">
-		<a href="#">
+		<div class="tray">
+			<span class="buy-amazon"><a href="http://www.amazon.com" target="_blank"><img src="<?php echo $theme_dir_path ?>/images/buy-amazon.png" width="86" height="17" /></a></span>
+			<span class="buy-goodreads"><a href="http://www.goodreads.com" target="_blank"><img src="<?php echo $theme_dir_path ?>/images/buy-goodreads.png" width="84" height="18" /></a></span>
+			<span class="buy-powells"><a href="http://www.powells.com" target="_blank"><img src="<?php echo $theme_dir_path ?>/images/buy-powells.png" width="73" height="24" /></a></span>
+		</div>
+
+		<a class="btn" href="#">
 			<span>BUY</span><img src="<?php echo $theme_dir_path ?>/images/icon-buy_now.png" width="37" height="31" /> <span>NOW</span>
 		</a>
 	</div>

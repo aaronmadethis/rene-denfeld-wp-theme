@@ -18,8 +18,8 @@
 						);
 
 						$attachments = get_posts( $args );
-						echo '<img src="' . $page_img[0] . '" width="' . $page_img[1] . '" height="' . $page_img[2] . '" alt="' . get_the_title() . '" />';
-						echo '<span>' . $attachments[0]->post_excerpt . '</span>';
+						echo '<img src="' . $page_img[0] . '" alt="' . get_the_title() . '" />';
+						echo '<span><a href=" http://www.garynormanphotography.com" target="_blank">' . $attachments[0]->post_excerpt . '</a></span>';
 					?>
 				</div>
 			</aside>
@@ -30,6 +30,7 @@
 				<?php if(get_field('contact_links')): ?>
 					<article>
 						<h1>Rene Denfeld</h1>
+						<div class="icons">
 						<?php 
 						while(has_sub_field('contact_links')){
 							$icon_id = get_sub_field('contact_icon');
@@ -44,23 +45,24 @@
 							echo  '<img src="' . $icon_img[0] . '" width="15" height="15" /></a>';
 						}
 						?>
+						</div>
 					</article>
 				<?php endif; ?>
 
 				<article>
-					<h1>Rene's Literary Agent</h1>
+					<h1>Literary Agent</h1>
 					<h2><?php the_field('literary_agent_title'); ?></h2>
 					<div><?php the_field('literary_agent_address'); ?></div>
 					<div><?php the_field('literary_agent_phone'); ?></div>
-					<div><a href="mailto:<?php the_field('literary_agent_email'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-email.png" width="15" height="15" /></a></div>
+					<div class="icons"><a href="mailto:<?php the_field('literary_agent_email'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-email.png" width="15" height="15" /></a></div>
 				</article>
 
 				<article>
-					<h1>Rene's Publicist</h1>
+					<h1>Publicist</h1>
 					<h2><?php the_field('publicist_title'); ?></h2>
 					<div><?php the_field('publicist_address'); ?></div>
 					<div><?php the_field('publicist_phone'); ?></div>
-					<div><a href="mailto:<?php the_field('publicist_email'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-email.png" width="15" height="15" /></a></div>
+					<div class="icons"><a href="mailto:<?php the_field('publicist_email'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-email.png" width="15" height="15" /></a></div>
 				</article>
 				
 				</div>
