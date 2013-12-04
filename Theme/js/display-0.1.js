@@ -176,21 +176,31 @@ jQuery(document).ready(function($) {
 	function set_positions(){
 		win_w = $(window).width();
 		win_h = $(window).height();
+		new_bar.w = org_bar.w;
+		new_bar.h = org_bar.h;
+		new_txt.w = org_txt.w;
+		new_txt.h = org_txt.h;
 
 		if(win_h < org_bar.h){
 			new_bar.h = win_h - 161;
 			new_bar.w = new_bar.h * (org_bar.w / org_bar.h);
-			$('#bars').css({width: new_bar.w, height: new_bar.h, "margin-top": ((new_bar.h/2) * -1), "margin-left": (new_bar.w/2) * -1 });
-			
+
 			new_txt.w = new_bar.w + new_bar.w*0.2;
 			new_txt.h = new_txt.w * (org_txt.h / org_txt.w);
-			$('#rene_txt').css({width: new_txt.w, height: new_txt.h, "margin-top": (new_txt.h/2) * -1 , "margin-left": (new_txt.w/2) * -1 });
-			$('#enchanted_txt').css({width: new_txt.w, height: new_txt.h, "margin-top": (new_txt.h/2) * -1, "margin-left": (new_txt.w/2) * -1 });
-		}else{
-			new_bar.w = org_bar.w;
-			new_bar.h = org_bar.h;
-			$('#bars').css({width: org_bar.w, height: org_bar.h, "margin-top": (org_bar.h/2) * -1, "margin-left": (org_bar.w/2) * -1 });
 		}
+
+		if(win_w < org_bar.w && win_w < 700){
+			new_bar.w = win_w - 120;
+			new_bar.h = new_bar.w * (org_bar.h / org_bar.w);
+
+			new_txt.w = new_bar.w + 50;
+			new_txt.h = new_txt.w * (org_txt.h / org_txt.w);
+		}
+
+		$('#rene_txt').css({width: new_txt.w, height: new_txt.h, "margin-top": (new_txt.h/2) * -1 , "margin-left": (new_txt.w/2) * -1 });
+		$('#enchanted_txt').css({width: new_txt.w, height: new_txt.h, "margin-top": (new_txt.h/2) * -1, "margin-left": (new_txt.w/2) * -1 });
+		$('#bars').css({width: new_bar.w, height: new_bar.h, "margin-top": ((new_bar.h/2) * -1), "margin-left": (new_bar.w/2) * -1 });
+
 
 		if(!played){
 			played = true;
