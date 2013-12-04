@@ -4,6 +4,8 @@
 	</footer>
 </section>
 <?php 
+	$theme_dir_path = get_stylesheet_directory_uri();
+	
 	$bg_img_id = get_field('background_image', 'options');
 	$bg_img = wp_get_attachment_image_src( $bg_img_id, $size = 'background-full', $icon = false, $attr = '' );
 ?>
