@@ -32,20 +32,20 @@
 						?>
 						<div class="rule"></div>
 						<?php
-							if(get_field('name')){
-								$name = get_field('name');
+							if(get_field('q_name')){
+								$name = get_field('q_name');
 								echo '<div class="quote_name">' . $name . '</div>';
 							}
 						?>
 						<div class="caption">
 							<?php
-								if(get_field('caption_one')){
-									the_field('caption_one');
+								if(get_field('caption_p_one')){
+									the_field('caption_p_one');
 								}
 							?>
 							<?php
-								if(get_field('caption_two')){
-									$caption_two = get_field('caption_two');
+								if(get_field('caption_p_two')){
+									$caption_two = get_field('caption_p_two');
 									echo '<em>' . $caption_two . '</em>';
 								}
 							?>

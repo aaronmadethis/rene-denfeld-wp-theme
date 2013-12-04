@@ -18,22 +18,22 @@
 				<li class="grid_3 grid mason_box" >
 					<article class="inside">
 						<?php
-							if(get_field('event_date')){
-								$date = get_field('event_date');
+							if(get_field('e_date')){
+								$date = get_field('e_date');
 								echo '<time class="date">' . $date . '</time>';
 							}
 						?>
 						<div class="rule"></div>
 						<?php
-							if(get_field('event_description')){
-								$description = get_field('event_description');
+							if(get_field('e_description')){
+								$description = get_field('e_description');
 								echo '<div class="description">' . $description . '</div>';
 							}
 						?>
 						<div class="location">
 							<?php
-								if(get_field('event_location')){
-									$event_location = get_field('event_location');
+								if(get_field('e_location')){
+									$event_location = get_field('e_location');
 									echo '<em>' . $event_location . '</em>';
 								}
 							?>
